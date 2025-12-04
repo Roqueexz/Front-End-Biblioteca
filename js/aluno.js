@@ -58,7 +58,7 @@ async function montarTabelaAlunos() {
             <td>${aluno.ra}</td>
             <td>${aluno.nome}</td>
             <td>${aluno.sobrenome}</td>
-            <td>${aluno.dataNascimento}</td>
+            <td>${new Date(aluno.dataNascimento).toLocaleDateString()}</td>
             <td>${aluno.endereco}</td>
             <td>${aluno.email}</td>
             <td>${aluno.celular}</td>

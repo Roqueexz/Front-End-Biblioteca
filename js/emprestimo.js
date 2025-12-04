@@ -57,8 +57,8 @@ async function montarTabelaEmprestimos() {
             <td>${emprestimo.idEmprestimo}</td>
             <td>${emprestimo.idAluno}</td>
             <td>${emprestimo.idLivro}</td>
-            <td>${emprestimo.dataEmprestimo}</td>
-            <td>${emprestimo.dataDevolucao}</td>
+            <td>${new Date(emprestimo.dataEmprestimo).toLocaleDateString()}</td>
+            <td>${new Date(emprestimo.dataDevolucao).toLocaleDateString()}</td>
             <td>${emprestimo.statusEmprestimo}</td>
             
 
