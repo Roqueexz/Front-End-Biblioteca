@@ -1,31 +1,46 @@
+/* Melhorias visuais separadas em arquivo CSS externo */
+
+body {
+    background-color: var(--cor-background);
+}
+
 .conteudo-principal {
     display: flex;
     flex-direction: row;
-    background-color: var(--cor-background);
-
     height: calc(100vh - 70px);
+    background: linear-gradient(90deg, #d9d9d9 0%, #ececec 100%);
 }
 
-.ctn-esquerdo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
+.ctn-esquerdo h2 {
+    font-size: 2rem;
+    color: var(--cor-principal);
+    margin-bottom: 10px;
+}
+
+.ctn-esquerdo p {
+    font-size: 1.1rem;
+    text-align: center;
+    max-width: 70%;
+    color: #333;
 }
 
 .ctn-esquerdo img {
-    width: 50%;
+    width: 45%;
     margin-top: 10%;
     margin-bottom: 10%;
+    filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+
+    mix-blend-mode: multiply;
+    opacity: 0.9;
 }
 
-.ctn-direito {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 50%;
-}
+
 
 .ctn-direito img {
-    width: 80%;
+    width: 70%;
+    margin: 0 auto;
+    filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.25));
+    border-radius: 12px;
+    mix-blend-mode: multiply;
+    opacity: 0.9;
 }
