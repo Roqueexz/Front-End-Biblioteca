@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EliteCar - Lista Aluno </title>
+    <title>Bibliotech - Novo Empréstimo</title>
     <link rel="stylesheet" href="/css/estilo.css">
     <link rel="stylesheet" href="/css/cadastro.css">
 </head>
@@ -12,18 +12,38 @@
 <body>
     <header class="cabecalho">
         <nav>
-            <a href="/index.html">ÍNICIO</a>
+            <a href="/index.html">INÍCIO</a>
             <a href="/pages/aluno/lista-alunos.html">ALUNOS</a>
-            <a href="/pages/emprestimo/lista-emprestimos.html">EMPRESTIMOS</a>
             <a href="/pages/livro/lista-livros.html">LIVROS</a>
+            <a href="/pages/emprestimo/lista-emprestimos.html">EMPRÉSTIMOS</a>
         </nav>
     </header>
 
     <main class="conteudo-principal">
         <div class="div-titulo">
-            <h1>CADASTRO EMPRESTIMOS</h1>
+            <h1>CADASTRO EMPRESTIMO</h1>
         </div>
-        
+        <div class="div-formulario">
+            <form action="" method="post" class="form-cadastro">
+                <label for="data-emprestimo">
+                    Data Emprestimo *
+                    <input type="number" id="data-emprestimo" name="data-emprestimo"
+                        placeholder="Insira a data do emprestimo" minlength="3" required>
+                </label>
+                <label for="devolucao-livro">
+                    Data Devolução *
+                    <input type="text" id="devolucao-livro" name="devolucao-livro"
+                        placeholder="Insira a data de devolução do livro" minlength="3" required>
+                </label>
+                <label for="status-livro">
+                    Status do Livro *
+                    <input type="text" id="status-livro" name="status-livro"
+                        placeholder="Insira o status do livro (emprestado, devolvido, dísponivel)" minlength="3" required>
+                </label>
+                <p>* Campos obrigatórios</p>
+                <input type="submit" value="CADASTRAR EMPRÉSTIMO">
+            </form>
+        </div>
     </main>
 </body>
 

@@ -4,24 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EliteCar - Lista Aluno </title>
+    <title>Bibliotech - Lista de Alunos</title>
     <link rel="stylesheet" href="/css/estilo.css">
-    <link rel="stylesheet" href="/css/cadastro.css">
+    <link rel="stylesheet" href="/css/listagens.css">
 </head>
 
-<body>
+<body onload="montarTabelaAlunos()">
     <header class="cabecalho">
-        <nav>
-            <a href="/index.html">ÍNICIO</a>
+        <nav>   
+            <a href="/index.html">INÍCIO</a>
             <a href="/pages/aluno/lista-alunos.html">ALUNOS</a>
-            <a href="/pages/emprestimo/lista-emprestimos.html">EMPRESTIMOS</a>
             <a href="/pages/livro/lista-livros.html">LIVROS</a>
+            <a href="/pages/emprestimo/lista-emprestimos.html">EMPRESTIMOS</a>
         </nav>
     </header>
-
     <main class="conteudo-principal">
         <div class="div-btn-novo">
-            <a href="/pages/carros/cadastro-carros.html" class="btn-novo">NOVO CARRO</a>
+            <a href="/pages/aluno/cadastro-alunos.html">NOVO ALUNO</a>
         </div>
         <div class="div-titulo-tabela">
             <h2>ALUNOS</h2>
@@ -31,54 +30,25 @@
             <table class="tabela">
                 <thead>
                     <tr>
-                        <th>ID CARRO</th>
-                        <th>MARCA</th>
-                        <th>MODELO</th>
-                        <th>ANO</th>
-                        <th>COR</th>
+                        <th>ID ALUNO</th>
+                        <th>RA</th>
+                        <th>NOME</th>
+                        <th>SOBRENOME</th>
+                        <th>DATA NASCIMENTO</th>
+                        <th>ENDERECO</th>
+                        <th>EMAIL</th>
+                        <th>CELULAR</th>
                         <th>AÇÕES</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>FORD</td>
-                        <td>KA</td>
-                        <td>2001</td>
-                        <td>Preto</td>
-                        <td>
-                            <img src="/assets/delete-icon.svg" alt="Excluir" title ="Excluir">
-                            <img src="/assets/edit-icon.svg" alt="Editar" title="Editar">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>TOYOTA</td>
-                        <td>Corolla XEi</td>
-                        <td>2021</td>
-                        <td>Prata</td>
-                        <td>
-                            <img src="/assets/delete-icon.svg" alt="Excluir" title ="Excluir">
-                            <img src="/assets/edit-icon.svg" alt="Editar" title ="Editar">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>BMW</td>
-                        <td>320i M Sport</td>
-                        <td>2023</td>
-                        <td>Pérola</td>
-                        <td>
-                          <img src="/assets/delete-icon.svg" alt="Excluir" title ="Excluir">
-                            <img src="/assets/edit-icon.svg" alt="Editar" title ="Editar">      
-                        </td>
-                    </tr>
+
                 </tbody>
             </table>
         </div>
     </main>
 
-    <script src="/js/carro.js"></script>
+    <script src="/js/aluno.js"></script>
 </body>
 
 </html>

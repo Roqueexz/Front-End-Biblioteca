@@ -1,9 +1,9 @@
 // endereço do servidor da API
-const serverURL = `http://localhost:1285/api/livros`;
+const serverURL = `http://localhost:1285/api/livro`;
 
 /**
- * Recupera as informações dos clientes na API
- * @returns JSON com informações dos clientes
+ * Recupera as informações dos carros na API
+ * @returns JSON com informações dos carros
  */
 async function listarLivros() {
   // Faz uma requisição HTTP para a URL formada pela junção do endereço do servidor e o endpoint da API de clientes.
@@ -16,7 +16,7 @@ async function listarLivros() {
     // Exibe no console um erro com o código de status da resposta e o texto retornado pela API.
     // Isso ajuda a identificar o motivo da falha na requisição.
     console.error(
-      "Erro na requisição:",
+      "Erro na requisição: ",
       respostaAPI.status,
       await respostaAPI.text()
     );
@@ -28,66 +28,60 @@ async function listarLivros() {
 
   // Converte o corpo da resposta da API (que está em formato JSON) em um objeto JavaScript.
   // Também usa 'await' porque essa conversão é assíncrona.
-  const jsonClientes = await respostaAPI.json();
+  const jsonLivros = await respostaAPI.json();
 
   // Retorna o objeto JavaScript contendo os dados dos clientes para quem chamou essa função.
-  return jsonClientes;
+  return jsonLivros;
 }
 
 /**
- * Monta a tabela com as informações dos clientes
+ * Monta a tabela com as informações dos carros
  */
-async function montarTabelaClientes() {
-  const listaDeClientes = await listarClientes(); // chama a função para obter a lista de clientes
+async function montarTabelaLivros() {
+  // Aguarda a lista de carros ser carregada (função que busca dados de uma API)
+  const listaDeLivros = await listarLivros();
 
-  // obtendo o elemento tabela
-  const tabela = document.querySelector("table");
-
-  // obtendo a tag de corpo da tabela
+  // Seleciona o elemento <tbody> da tabela no DOM
   const tbody = document.querySelector("tbody");
+  // Limpa o conteúdo do <tbody> antes de preencher (evita duplicações)
+  tbody.innerHTML = "";
 
-  // percorre toda a lista de clientes
-  // para cada interação é criado um objeto apelidado de cliente
-  listaDeClientes.forEach((cliente) => {
-    // Criando os elementos da tabela
-    const tableRow = document.createElement("tr");
-    const tdIdCliente = document.createElement("td");
-    const tdNomeCliente = document.createElement("td");
-    const tdCpfCliente = document.createElement("td");
-    const tdTelefoneCliente = document.createElement("td");
-    const tdAcoes = document.createElement("td");
-    const iconeDeletar = document.createElement("img");
-    const iconeAtualizar = document.createElement("img");
+  // Percorre cada objeto 'carro' da lista
+  listaDeLivros.forEach((livro) => {
+    // Cria uma nova linha <tr> para a tabela
+    const tr = document.createElement("tr");
 
-    // Inserindo as propriedades do icone de deletar
-    iconeDeletar.src = "/assets/delete-icon.svg";
-    iconeDeletar.alt = "remover";
+    // Define o HTML interno da linha com as células <td> usando template literals
+    // As expressões ${...} inserem os valores do objeto 'carro' diretamente no HTML
+    tr.innerHTML = `
+            <td>${livro.idLivro}</td>
+            <td>${livro.titulo}</td>
+            <td>${livro.autor}</td>
+            <td>${livro.editora}</td>
+            <td>${livro.anoPublicacao}</td>
+            <td>${livro.isbn}</td>
+            <td>${livro.quantidadeTotal}</td>
+            <td>${livro.quantidadeDisponivel}</td>
+            <td>${livro.valor}</td>
+            <td>${livro.statusLivro}</td>
 
-    // Inserindo as propriedades do icone de atualizar
-    iconeAtualizar.src = "/assets/edit-icon.svg";
-    iconeAtualizar.alt = "editar";
+            <td>
+                <img src='/assets/delete-icon.svg' alt='Deletar' class='btn-delete'/>
+                <img src='/assets/edit-icon.svg' alt='Editar' class='btn-edit'/>
+            </td>
+        `;
 
-    // Inserindo as informações dos clientes
-    tdIdCliente.textContent = cliente.idCliente;
-    tdNomeCliente.textContent = cliente.nome;
-    tdCpfCliente.textContent = cliente.cpf;
-    tdTelefoneCliente.textContent = cliente.telefone;
+    // Adiciona a linha <tr> dentro do <tbody> já selecionado
+    tbody.appendChild(tr);
 
-    // Anexando os ícones no tdAcoes
-    tdAcoes.appendChild(iconeDeletar);
-    tdAcoes.appendChild(iconeAtualizar);
-
-    // Anexando as infos do cliente no tableRow
-    tableRow.appendChild(tdIdCliente);
-    tableRow.appendChild(tdNomeCliente);
-    tableRow.appendChild(tdCpfCliente);
-    tableRow.appendChild(tdTelefoneCliente);
-    tableRow.appendChild(tdAcoes);
-
-    // Anexando o tableRow no tbody
-    tbody.appendChild(tableRow);
+    // adiciona eventos
+    // Seleciona o ícone de "deletar" dentro da linha atual e adiciona um listener de clique
+    tr.querySelector(".btn-delete").addEventListener("click", () =>
+      alert("Deletar")
+    );
+    // Seleciona o ícone de "editar" dentro da linha atual e adiciona um listener de clique
+    tr.querySelector(".btn-edit").addEventListener("click", () =>
+      alert("Editar")
+    );
   });
-
-  // Anexando o tbody na tabela
-  tabela.appendChild(tbody);
 }

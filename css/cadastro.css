@@ -1,16 +1,54 @@
-.conteudo-principal {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    gap: 0px;
+.div-titulo {
+    height: 20vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.ctn-titulo {
-    grid-column: span 8 / span 8;
+.div-formulario {
+    height: calc(80vh - 70px);
 }
 
-.ctn-formulario {
-    grid-column: span 8 / span 8;
-    grid-row: span 7 / span 7;
-    grid-row-start: 2;
+.form-cadastro {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.form-cadastro label {
+    display: flex;
+    flex-direction: column;
+
+    margin: 1rem 0;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="date"],
+select {
+    height: 4vh;
+    border-radius: 5px;
+    border: 1px solid #434343;
+}
+
+input[type="submit"] {
+    width: 40%;
+    height: 6vh;
+    border-radius: 5px;
+    margin: 2rem auto;
+    font-size: 1.15rem;
+
+    background-color: var(--cor-principal);
+    color: var(--cor-destaque);
+    transition: background-color 0.3s;
+}
+
+
+
+
+input {
+    padding-left: 5px;
 }

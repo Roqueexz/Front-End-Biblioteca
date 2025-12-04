@@ -4,37 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EliteCar - Lista Livros </title>
+    <title>Bibliotech - Lista de Livros</title>
     <link rel="stylesheet" href="/css/estilo.css">
-    <link rel="stylesheet" href="/css/cadastro.css">
+    <link rel="stylesheet" href="/css/listagens.css">
 </head>
 
-<body>
+<body onload="montarTabelaLivros()">
     <header class="cabecalho">
         <nav>
-            <a href="/index.html">ÍNICIO</a>
+            <a href="/index.html">INÍCIO</a>
             <a href="/pages/aluno/lista-alunos.html">ALUNOS</a>
-            <a href="/pages/emprestimo/lista-emprestimos.html">EMPRESTIMOS</a>
             <a href="/pages/livro/lista-livros.html">LIVROS</a>
+            <a href="/pages/emprestimo/lista-emprestimos.html">EMPRESTIMOS</a>
         </nav>
     </header>
 
     <main class="conteudo-principal">
         <div class="div-btn-novo">
-            <a href="/pages/clientes/cadastro-clientes.html">NOVO CLIENTE</a>
+            <a href="/pages/livro/cadastro-livros.html">NOVO LIVRO</a>
         </div>
         <div class="div-titulo-tabela">
-            <h2>CLIENTES</h2>
+            <h2>LIVROS</h2>
         </div>
         <div class="div-vazio"></div>
         <div class="div-tabela">
             <table class="tabela">
                 <thead>
                     <tr>
-                        <th>ID CLIENTE</th>
-                        <th>NOME</th>
-                        <th>CPF</th>
-                        <th>TELEFONE</th>
+                        <th>ID LIVRO</th>
+                        <th>TITULO</th>
+                        <th>AUTOR</th>
+                        <th>EDITORA</th>
+                        <th>ANO PUBLICAÇÃO</th>
+                        <th>ISBN</th>
+                        <th>QUANTIDADE</th>
+                        <th>DISPONÍVEL</th>
+                        <th>VALOR</th>
+                        <th>STATUS</th>
                         <th>AÇÕES</th>
                     </tr>
                 </thead>
@@ -45,7 +51,7 @@
         </div>
     </main>
 
-    <script src="/js/cliente.js"></script>
+    <script src="/js/livro.js"></script>
 </body>
 
 </html>

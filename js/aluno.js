@@ -1,5 +1,5 @@
 // endereço do servidor da API
-const serverURL = `http://localhost:1285/api/alunos`;
+const serverURL = `http://localhost:1285/api/aluno`;
 
 /**
  * Recupera as informações dos carros na API
@@ -28,18 +28,18 @@ async function listarAlunos() {
 
   // Converte o corpo da resposta da API (que está em formato JSON) em um objeto JavaScript.
   // Também usa 'await' porque essa conversão é assíncrona.
-  const jsonCarros = await respostaAPI.json();
+  const jsonAlunos = await respostaAPI.json();
 
   // Retorna o objeto JavaScript contendo os dados dos clientes para quem chamou essa função.
-  return jsonCarros;
+  return jsonAlunos;
 }
 
 /**
  * Monta a tabela com as informações dos carros
  */
-async function montarTabelaCarros() {
+async function montarTabelaAlunos() {
   // Aguarda a lista de carros ser carregada (função que busca dados de uma API)
-  const listaDeCarros = await listarCarros();
+  const listaDeAlunos = await listarAlunos();
 
   // Seleciona o elemento <tbody> da tabela no DOM
   const tbody = document.querySelector("tbody");
@@ -47,18 +47,22 @@ async function montarTabelaCarros() {
   tbody.innerHTML = "";
 
   // Percorre cada objeto 'carro' da lista
-  listaDeCarros.forEach((carro) => {
+  listaDeAlunos.forEach((aluno) => {
     // Cria uma nova linha <tr> para a tabela
     const tr = document.createElement("tr");
 
     // Define o HTML interno da linha com as células <td> usando template literals
     // As expressões ${...} inserem os valores do objeto 'carro' diretamente no HTML
     tr.innerHTML = `
-            <td>${carro.idCarro}</td>
-            <td>${carro.marca}</td>
-            <td>${carro.modelo}</td>
-            <td>${carro.ano}</td>
-            <td>${carro.cor}</td>
+            <td>${aluno.idAluno}</td>
+            <td>${aluno.ra}</td>
+            <td>${aluno.nome}</td>
+            <td>${aluno.sobrenome}</td>
+            <td>${aluno.dataNascimento}</td>
+            <td>${aluno.endereco}</td>
+            <td>${aluno.email}</td>
+            <td>${aluno.celular}</td>
+
             <td>
                 <img src='/assets/delete-icon.svg' alt='Deletar' class='btn-delete'/>
                 <img src='/assets/edit-icon.svg' alt='Editar' class='btn-edit'/>

@@ -4,49 +4,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EliteCar - Lista Aluno </title>
+    <title>Bibliotech - Cadastro de Livros</title>
     <link rel="stylesheet" href="/css/estilo.css">
     <link rel="stylesheet" href="/css/cadastro.css">
 </head>
 
-<body>
+<body onload="montarTabelaLivros()">
     <header class="cabecalho">
         <nav>
-            <a href="/index.html">ÍNICIO</a>
+            <a href="/index.html">INÍCIO</a>
             <a href="/pages/aluno/lista-alunos.html">ALUNOS</a>
-            <a href="/pages/emprestimo/lista-emprestimos.html">EMPRESTIMOS</a>
             <a href="/pages/livro/lista-livros.html">LIVROS</a>
+            <a href="/pages/emprestimo/lista-emprestimos.html">EMPRESTIMOS</a>
         </nav>
     </header>
 
     <main class="conteudo-principal">
-        <div class="ctn-titulo">
-            <h2>CADASTRO LIVROS</h2>
+        <div class="div-titulo">
+            <h1>CADASTRO LIVRO</h1>
         </div>
-        <div class="ctn-formulario">
-            <form action="" method="post">
-                <label for="nome-cliente">
-                    Nome *
-                    <input type="text" name="nome-cliente" id="nome-cliente" placeholder="Digite o seu nome"
+        <div class="div-formulario">
+            <form action="" method="post" class="form-cadastro">
+                <label for="titulo-livro">
+                    Título *
+                    <input type="text" id="titulo-livro" name="titulo-livro" placeholder="Insira o título do livro"
                         minlength="3" required>
                 </label>
-
-                <label for="cpf-cliente">
-                    CPF *
-                    <input type="number" name="cpf-cliente" id="cpf-cliente"
-                        placeholder="Digite o CPF (somente números)" required>
+                <label for="autor-livro">
+                    Autor *
+                    <input type="text" id="autor-livro" name="autor-livro" placeholder="Insira o autor do livro"
+                        minlength="3" required>
                 </label>
-
-                <label for="telefone-cliente">
-                    Telefone *
-                    <input type="number" name="cpf-cliente" id="cpf-cliente"
-                        placeholder="Digite o telefone (somente números)" required>
+                <label for="editora-livro">
+                    Editora *
+                    <input type="text" id="editora-livro" name="editora-livro" placeholder="Insira a editora do livro"
+                        required>
                 </label>
-                <p>* Campos obrigatórios</p>
-                <input type="submit" value="CADASTRAR">
+                <label for="anopblicacao-livro">
+                    Ano Publicação *
+                    <input type="number" id="anopblicacao-livro" name="anopblicacao-livro"
+                        placeholder="Insira o ano de publicação do livro" required>
+                </label>
+                <label for="isbn-livro">
+                    ISBN *
+                    <input type="text" id="isbn-livro" name="isbn-livro" placeholder="Insira o isbn do livro" required>
+                </label>
+                <label for="quantidadetotal-livro">
+                    Quantidade Total *
+                    <input type="text" id="quantidadetotal-livro" name="quantidadetotal-livro"
+                        placeholder="Insira a quantidade total de livros" required>
+                </label>
+                <label for="quantidadedisponivel-livro">
+                    Quantidade Dísponivel *
+                    <input type="text" id="quantidadedisponivel-livro" name="quantidadedisponivel-livro"
+                        placeholder="Insira a quantidade disponível de livros" required>
+                </label>
+                <label for="status-livro">
+                    Status Livro*
+                    <input type="text" id="status-livro" name="status-livro" placeholder="Insira o status do livro"
+                        required>
+                </label>
+                <p>* Campos Obrigatórios</p>
+                
+                <input type="submit" value="CADASTRAR CARRO">
             </form>
         </div>
     </main>
-</body>
-
-</html>
+    </body>
+    
+    </html>

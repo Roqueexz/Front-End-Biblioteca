@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EliteCar - Lista Aluno </title>
+    <title>Bibliotech - Novo Aluno</title>
     <link rel="stylesheet" href="/css/estilo.css">
     <link rel="stylesheet" href="/css/cadastro.css">
 </head>
@@ -12,10 +12,10 @@
 <body>
     <header class="cabecalho">
         <nav>
-            <a href="/index.html">ÍNICIO</a>
+            <a href="/index.html">INÍCIO</a>
             <a href="/pages/aluno/lista-alunos.html">ALUNOS</a>
-            <a href="/pages/emprestimo/lista-emprestimos.html">EMPRESTIMOS</a>
             <a href="/pages/livro/lista-livros.html">LIVROS</a>
+            <a href="/pages/emprestimo/lista-emprestimos.html">EMPRÉSTIMOS</a>
         </nav>
     </header>
 
@@ -25,29 +25,36 @@
         </div>
         <div class="div-formulario">
             <form action="" method="post" class="form-cadastro">
-                <label for="marca-carro">
-                    Marca *
-                    <input type="text" id="marca-carro" name="marca-carro" placeholder="Insira a marca do carro"
-                        minlength="3" required>
+                <label for="nome-aluno">
+                    Nome *
+                    <input type="text" id="nome-aluno" name="nome-aluno" placeholder="Insira o nome" minlength="3"
+                        required>
                 </label>
-                <label for="modelo-carro">
-                    Modelo *
-                    <input type="text" id="modelo-carro" name="modelo-carro"
-                        placeholder="Insira o modelo do carro" minlength="3" required>
+                <label for="sobrenome-aluno">
+                    Sobrenome *
+                    <input type="text" id="sobrenome-aluno" name="sobrenome-aluno" placeholder="Insira o sobrenome"
+                        required minlength="3" required>
                 </label>
-                <label for="ano-carro">
-                    Ano *
-                    <input type="number" id="ano-carro" name="ano-carro"
-                        placeholder="Insira o ano do carro" required>
+                <label for="datanascimento-aluno">
+                    Data Nascimento *
+                    <input type="date" id="datanascimento-aluno" name="datanascimento-aluno"
+                        placeholder="Insira a data de nascimento (somente números)" required>
                 </label>
-                <label for="cor-carro">
-                    Cor *
-                    <input type="text" id="cor-carro" name="cor-carro"
-                        placeholder="Insira a cor do carro" required>
+                <label for="endereco-aluno">
+                    Endereço *
+                    <input type="text" id="endereco-aluno" name="endereco-aluno" placeholder="Insira o endereço"
+                        required>
                 </label>
-                <p style="color: red">* Campos obrigatórios</p>
-
-                <input type="submit" value="CADASTRAR CARRO">
+                <label for="email-aluno">
+                    Email *
+                    <input type="email" id="email-aluno" name="email-aluno" placeholder="Insira o email" required>
+                </label>
+                <label for="celular-aluno">
+                    Celular *
+                    <input type="tel" id="celular-aluno" name="celular-aluno" placeholder="Insira o celular" required>
+                </label>
+                <p>* Campos obrigatórios</p>
+                <input type="submit" value="CADASTRAR">
             </form>
         </div>
     </main>

@@ -1,5 +1,5 @@
 // endereço do servidor da API
-const serverURL = `http://localhost:1285/api/emprestimos`;
+const serverURL = `http://localhost:1285/api/emprestimo`;
 
 /**
  * Recupera as informações dos carros na API
@@ -28,18 +28,18 @@ async function listarEmprestimos() {
 
   // Converte o corpo da resposta da API (que está em formato JSON) em um objeto JavaScript.
   // Também usa 'await' porque essa conversão é assíncrona.
-  const jsonCarros = await respostaAPI.json();
+  const jsonEmprestimos = await respostaAPI.json();
 
   // Retorna o objeto JavaScript contendo os dados dos clientes para quem chamou essa função.
-  return jsonCarros;
+  return jsonEmprestimos;
 }
 
 /**
  * Monta a tabela com as informações dos carros
  */
-async function montarTabelaPedidos() {
+async function montarTabelaEmprestimos() {
   // Aguarda a lista de carros ser carregada (função que busca dados de uma API)
-  const listaDeCarros = await listarPedidos();
+  const listaDeEmprestimos = await listarEmprestimos();
 
   // Seleciona o elemento <tbody> da tabela no DOM
   const tbody = document.querySelector("tbody");
@@ -47,22 +47,21 @@ async function montarTabelaPedidos() {
   tbody.innerHTML = "";
 
   // Percorre cada objeto 'carro' da lista
-  listaDePedidos.forEach((pedido) => {
+  listaDeEmprestimos.forEach((emprestimo) => {
     // Cria uma nova linha <tr> para a tabela
     const tr = document.createElement("tr");
 
     // Define o HTML interno da linha com as células <td> usando template literals
     // As expressões ${...} inserem os valores do objeto 'carro' diretamente no HTML
     tr.innerHTML = `
-            <td>${pedido.idPedido}</td>
-            <td>${pedido.idCliente}</td>
-            <td>${pedido.nomeCliente}</td>
-            <td>${pedido.idCarro}</td>
-            <td>${pedido.marcaCarro}</td>
-            <td>${pedido.modeloCarro}</td>
-            <td>${pedido.dataPedido}</td>
-            <td>${pedido.valorPedido}</td>
-            <td>${pedido.situacao}</td>
+            <td>${emprestimo.idEmprestimo}</td>
+            <td>${emprestimo.idAluno}</td>
+            <td>${emprestimo.idLivro}</td>
+            <td>${emprestimo.dataEmprestimo}</td>
+            <td>${emprestimo.dataDevolucao}</td>
+            <td>${emprestimo.statusEmprestimo}</td>
+            
+
             <td>
                 <img src='/assets/delete-icon.svg' alt='Deletar' class='btn-delete'/>
                 <img src='/assets/edit-icon.svg' alt='Editar' class='btn-edit'/>
