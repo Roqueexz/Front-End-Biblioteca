@@ -1,46 +1,106 @@
-/* Melhorias visuais separadas em arquivo CSS externo */
+/* ----------- ESTILO DO CORPO ----------- */
 
 body {
-    background-color: var(--cor-background);
+    background-color: #f2f2f2;
+    /* NOVA COR → igual ao fundo da logo */
 }
 
 .conteudo-principal {
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     height: calc(100vh - 70px);
-    background: linear-gradient(90deg, #d9d9d9 0%, #ececec 100%);
+    padding: 0 6%;
+    background-color: #f2f2f2;
+    /* combinação perfeita com a logo */
+}
+
+/* ----------- COLUNA ESQUERDA ----------- */
+
+.ctn-esquerdo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
 }
 
 .ctn-esquerdo h2 {
-    font-size: 2rem;
+    font-size: 2.7rem;
     color: var(--cor-principal);
-    margin-bottom: 10px;
+    font-weight: 700;
 }
 
 .ctn-esquerdo p {
-    font-size: 1.1rem;
-    text-align: center;
-    max-width: 70%;
-    color: #333;
+    font-size: 1.2rem;
+    max-width: 75%;
+    color: #222;
+    font-weight: 500;
 }
 
 .ctn-esquerdo img {
     width: 45%;
-    margin-top: 10%;
-    margin-bottom: 10%;
-    filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
-
-    mix-blend-mode: multiply;
+    max-width: 300px;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.20));
     opacity: 0.9;
+    mix-blend-mode: multiply;
 }
 
+/* ----------- COLUNA DIREITA ----------- */
 
+.ctn-direito {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .ctn-direito img {
-    width: 70%;
-    margin: 0 auto;
-    filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.25));
-    border-radius: 12px;
+    width: 60%;
+    /* DIMINUI → antes era 75% */
+    max-width: 420px;
+    /* LIMITA PARA NÃO PEGAR A HEADER */
+    margin-top: 40px;
+    /* AFASTAMENTO GARANTIDO DA HEADER */
+
+    border-radius: 14px;
+    filter: drop-shadow(0px 6px 14px rgba(0, 0, 0, 0.25));
+    opacity: 0.95;
     mix-blend-mode: multiply;
-    opacity: 0.9;
+}
+
+/* ----------- RESPONSIVO ----------- */
+@media (max-width: 900px) {
+
+    .conteudo-principal {
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    .ctn-esquerdo,
+    .ctn-direito {
+        width: 100%;
+        align-items: center;
+    }
+
+    .ctn-esquerdo h2 {
+        font-size: 2.1rem;
+    }
+
+    .ctn-esquerdo p {
+        max-width: 90%;
+    }
+
+    .ctn-esquerdo img {
+        width: 55%;
+    }
+
+    .ctn-direito img {
+        width: 70%;
+        /* menor no mobile também */
+        max-width: 350px;
+    }
 }
