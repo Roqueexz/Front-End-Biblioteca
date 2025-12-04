@@ -62,7 +62,7 @@ async function montarTabelaAlunos() {
             <td>${aluno.endereco}</td>
             <td>${aluno.email}</td>
             <td>${aluno.celular}</td>
-
+    
             <td>
                 <img src='/assets/delete-icon.svg' alt='Deletar' class='btn-delete'/>
                 <img src='/assets/edit-icon.svg' alt='Editar' class='btn-edit'/>
