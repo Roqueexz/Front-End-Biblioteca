@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EliteCar - Lista Aluno </title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <link rel="stylesheet" href="/css/cadastro.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <nav>
+            <a href="/index.html">ÍNICIO</a>
+            <a href="/pages/aluno/lista-alunos.html">ALUNOS</a>
+            <a href="/pages/emprestimo/lista-emprestimos.html">EMPRESTIMOS</a>
+            <a href="/pages/livro/lista-livros.html">LIVROS</a>
+        </nav>
+    </header>
+
+    <main class="conteudo-principal">
+        <div class="div-btn-novo">
+            <a href="/pages/carros/cadastro-carros.html" class="btn-novo">NOVO CARRO</a>
+        </div>
+        <div class="div-titulo-tabela">
+            <h2>ALUNOS</h2>
+        </div>
+        <div class="div-vazio"></div>
+        <div class="div-tabela">
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th>ID CARRO</th>
+                        <th>MARCA</th>
+                        <th>MODELO</th>
+                        <th>ANO</th>
+                        <th>COR</th>
+                        <th>AÇÕES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>FORD</td>
+                        <td>KA</td>
+                        <td>2001</td>
+                        <td>Preto</td>
+                        <td>
+                            <img src="/assets/delete-icon.svg" alt="Excluir" title ="Excluir">
+                            <img src="/assets/edit-icon.svg" alt="Editar" title="Editar">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>TOYOTA</td>
+                        <td>Corolla XEi</td>
+                        <td>2021</td>
+                        <td>Prata</td>
+                        <td>
+                            <img src="/assets/delete-icon.svg" alt="Excluir" title ="Excluir">
+                            <img src="/assets/edit-icon.svg" alt="Editar" title ="Editar">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>BMW</td>
+                        <td>320i M Sport</td>
+                        <td>2023</td>
+                        <td>Pérola</td>
+                        <td>
+                          <img src="/assets/delete-icon.svg" alt="Excluir" title ="Excluir">
+                            <img src="/assets/edit-icon.svg" alt="Editar" title ="Editar">      
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="/js/carro.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --cor-principal: #0D0D87;
+    --cor-background: #E0E0E0;
+    --cor-destaque: #EFEFEF;
+    --cor-cabecalho-tabela: #404040;
+    --cor-corpo-tabela: #363636;
+
+}
+
+* { 
+    margin: 0;
+    padding: 0;
+
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: italic 100 900;
+  font-style: normal;
+}
+
+.cabecalho {    
+    background-color: var(--cor-principal);
+    height: 70px;
+}
+
+.cabecalho nav { 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+.cabecalho a {
+    color: white;
+    text-decoration: none;
+}

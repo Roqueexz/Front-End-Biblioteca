@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EliteCar - Lista Aluno </title>
+  <link rel="stylesheet" href="/css/estilo.css">
+  <link rel="stylesheet" href="/css/cadastro.css">
+</head>
+
+<body>
+  <header class="cabecalho">
+    <nav>
+      <a href="/index.html">ÍNICIO</a>
+      <a href="/pages/aluno/lista-alunos.html">ALUNOS</a>
+      <a href="/pages/emprestimo/lista-emprestimos.html">EMPRESTIMOS</a>
+      <a href="/pages/livro/lista-livros.html">LIVROS</a>
+    </nav>
+  </header>
+
+    <main class="conteudo-principal">
+      <div class="div-btn-novo">
+        <a href="../pedidos/cadastro-pedidos.html" class="btn-novo"
+          >NOVO PEDIDO</a
+        >
+      </div>
+      <div class="div-titulo-tabela">
+        <h2>PEDIDOS</h2>
+      </div>
+      <div class="div-vazio"></div>
+      <div class="div-tabela">
+        <table class="tabela">
+          <thead>
+            <tr>
+              <th>ID PEDIDO</th>
+              <th>CLIENTE</th>
+              <th>CARRO</th>
+              <th>DATA PEDIDO</th>
+              <th>VALOR</th>
+              <th>AÇÃO</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>JOÃO SILVA</td>
+              <td>VOLKSWAGEN GOL</td>
+              <td>09/09/2023</td>
+              <td>R$&nbsp;75.000,00</td>
+              <td>
+                <img src="../../assets/delete-icon.svg" alt="Deletar" />
+                <img src="../../assets/edit-icon.svg" alt="Editar" />
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>MARIA OLIVEIRA</td>
+              <td>CHEVROLET ONIX</td>
+              <td>14/08/2023</td>
+              <td>R$&nbsp;68.000,00</td>
+              <td>
+                <img src="../../assets/delete-icon.svg" alt="Deletar" /><img
+                  src="../../assets/edit-icon.svg"
+                  alt="Editar"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <script src="../../js/pedido.js"></script>
+  </body>
+</html>
